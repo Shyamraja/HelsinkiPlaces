@@ -29,14 +29,22 @@ const PlacesTable = () => {
     },   
     {
       name: "Status",
-      selector: row => row.isOpen ? "Open" : "Opened",
+      selector: row => (row.isOpen ? "Open" : "Opened"),
     },   
   ];
   
   useEffect(() => {
      getPlaces();
   },[]);
-  return <DataTable columns={columns} data={places}/>;
+
+
+ return (
+ <DataTable title="Places" 
+    columns={columns} 
+    data={places} 
+    pagination 
+  />
+ );
 };
 
 export default PlacesTable;
